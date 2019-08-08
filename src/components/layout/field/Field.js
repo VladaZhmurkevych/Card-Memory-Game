@@ -27,13 +27,14 @@ function Field(props) {
 
     }
   }, [closeCards, guessCards, opened]);
+
   return (
     <React.Fragment>
       {
         !loading
-          ? <div className={classes.field} style={{ width: size*150 + (size - 1)*10 }}>
+          ? <div className={classes.field} style={{ width: size*150 + (size - 1)*25 }}>
           { cards.map((item, index) => {
-            return <Card key={index} name={item.name} class={""} index={index}/>;
+            return <Card key={index} name={item.name} image={item.image} class={""} index={index}/>;
           })}
         </div>
           : null

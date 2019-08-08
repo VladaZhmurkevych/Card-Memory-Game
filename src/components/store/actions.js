@@ -7,7 +7,9 @@ import {
   FETCH_ERROR,
   OPENED_CARDS,
   CLOSE_CARDS,
-  GUESSED_CARDS
+  GUESSED_CARDS,
+  TIMER_TICK,
+  FINISH_GAME
 } from "./types";
 
 export const setFieldSize = (size) => ({
@@ -44,6 +46,13 @@ export const guessCards = () => ({
   type: GUESSED_CARDS,
 });
 
+export const timerTick = () => ({
+  type: TIMER_TICK,
+});
+
+export const finishGame = () => ({
+  type: FINISH_GAME,
+});
 
 export const fetchCards = () => (dispatch) => {
   dispatch(fetchStart());

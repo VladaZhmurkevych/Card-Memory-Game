@@ -5,12 +5,18 @@ import {
   FETCH_ERROR,
   OPENED_CARDS,
   CLOSE_CARDS,
-  GUESSED_CARDS
+  GUESSED_CARDS,
+  TIMER_TICK,
+  FINISH_GAME
 } from "./types";
+import {SECOND} from "../../utils";
 
 const INITIAL_STATE = {
   fieldSize: 0,
   cards: [],
+  time: 0,
+  timer: 0,
+  title: "",
   loading: false,
   error: null,
   opened: [],
@@ -35,7 +41,10 @@ const appReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         error: null,
-        cards: action.payload.cards,
+        cards: action.payload.game.cards,
+        time: action.payload.game.time,
+        timer: action.payload.game.time,
+        title: action.payload.game.title
       };
     case FETCH_ERROR:
       return {
@@ -58,6 +67,16 @@ const appReducer = (state = INITIAL_STATE, action) => {
         ...state,
         guessed: [...state['guessed'], ...state['opened'].slice(0, 2)],
         opened: [...state['opened'].splice(2)],
+      };
+    case TIMER_TICK:
+      return {
+        ...state,
+        timer: state.timer - SECOND
+      };
+    case FINISH_GAME:
+      return {
+        ...state,
+        timer: state.time
       };
     default: return state;
   }

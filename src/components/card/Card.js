@@ -5,9 +5,9 @@ import {connect} from "react-redux";
 import {setOpenedCards} from "../store/actions";
 
 function Card(props) {
-  const { name, opened, index, setOpenedCards, guessed  } = props;
+  const { name, opened, index, setOpenedCards, guessed, image  } = props;
   const [flipped, setFlipped] = useState(false);
-
+console.log(image);
   return (
     <div className={classes.card} onClick={() => {
       setFlipped(prevFlipped => !prevFlipped);
@@ -26,7 +26,7 @@ function Card(props) {
           <p className={classes.text}>Open the card</p>
         </div>
         <div className={[classes.cardBack, classes.cardFace].join(' ')}>
-          <p className={classes.text}>{name}</p>
+          <img className={classes.image} src={image} alt={"image"}/>
         </div>
       </div>
     </div>

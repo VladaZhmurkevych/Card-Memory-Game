@@ -1,3 +1,58 @@
+
+const mediumGame = {
+  cardsList: [
+    {
+      name: "1",
+      id: 1,
+      image: '/images/beach.png'
+
+    },
+    {
+      name: "2",
+      id: 2,
+      image: '/images/campsite.png'
+
+    },
+    {
+      name: "3",
+      id: 3,
+      image: '/images/cinema.svg'
+
+    },
+    {
+      name: "4",
+      id: 4,
+      image: '/images/digital-camera.png'
+
+    },
+    {
+      name: "5",
+      id: 5,
+      image: '/images/fishing.png'
+    },
+    {
+      name: "6",
+      id: 6,
+      image: '/images/hiking.png'
+
+    },
+    {
+      name: "7",
+      id: 7,
+      image: '/images/ice-cream.png'
+
+    },
+    {
+      name: "8",
+      id: 8,
+      image: '/images/take-off.png'
+
+    },
+  ],
+  time: 120000,
+  title: "medium",
+};
+
 const cardsList = [
   {
     name: "1"
@@ -31,10 +86,15 @@ function shuffle(array) {
 
 const getCards = async (req, res) => {
   try {
-    let cards = [...cardsList, ...cardsList];
+    let cards = [...mediumGame.cardsList, ...mediumGame.cardsList];
     shuffle(cards);
+    const game = {
+      cards: cards,
+      title: mediumGame.title,
+      time: mediumGame.time,
+    };
     res.json({
-      status: 'OK', cards
+      status: 'OK', game
     });
   } catch (e) {
     console.log(e);
