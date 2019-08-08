@@ -10,7 +10,8 @@ import {
   GUESSED_CARDS,
   TIMER_TICK,
   FINISH_GAME,
-  TOGGLE_START_POPUP
+  TOGGLE_START_POPUP,
+  TOGGLE_FINISH_POPUP
 } from "./types";
 
 export const setFieldSize = (size) => ({
@@ -20,6 +21,10 @@ export const setFieldSize = (size) => ({
 
 export const toggleStartPopup = () => ({
   type: TOGGLE_START_POPUP,
+});
+
+export const toggleFinishPopup = () => ({
+  type: TOGGLE_FINISH_POPUP,
 });
 
 export const fetchStart = () => ({

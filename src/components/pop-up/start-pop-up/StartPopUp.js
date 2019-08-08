@@ -9,8 +9,9 @@ import {toggleStartPopup} from "../../store/actions";
 const StartPopUp = (props) => {
   const { close, time } = props;
   return (  <PopUp close={close}>
-    <div >
+    <div className={classes.box} >
       <p className={classes.title}>Card memory game</p>
+      <p className={classes.level}>Level: medium</p>
       <p className={classes.time}>
         {' '}
         Time for game:

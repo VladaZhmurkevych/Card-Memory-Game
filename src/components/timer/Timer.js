@@ -12,7 +12,13 @@ function Timer(props) {
     interval = setInterval(() => {
       tickTimer();
     }, SECOND);
+
+    return () => {
+      clearInterval(interval);
+    }
   }, []);
+
+
 
   return (
     <p className={classes.timer}>{formatTime(timer)}</p>

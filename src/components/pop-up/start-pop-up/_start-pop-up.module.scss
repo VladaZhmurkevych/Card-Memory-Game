@@ -1,6 +1,11 @@
 .title {
   font-size: 30px;
   font-family: 'Pridi', serif;
+  text-align: center;
+}
+
+.box {
+  margin: 0;
 }
 
 .time {
@@ -8,6 +13,14 @@
   margin-top: 10px;
   font-family: 'Pridi', serif;
   font-size: 20px;
+}
+
+.level {
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Pridi', serif;
+  color: #787878;
+  margin: 10px auto 1px auto;
 }
 
 @media all and (max-width: 400px){

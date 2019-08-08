@@ -25,7 +25,7 @@ function Card(props) {
           <p className={classes.text}>Open the card</p>
         </div>
         <div className={[classes.cardBack, classes.cardFace].join(' ')}>
-          <img className={classes.image} src={image} alt={"image"}/>
+          {!guessed.find((item) => item.index === index) ? <img className={classes.image} src={image} alt={"image"}/> : <div className={classes.guessed}> </div>}
         </div>
       </div>
     </div>

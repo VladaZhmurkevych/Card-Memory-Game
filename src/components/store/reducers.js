@@ -8,7 +8,8 @@ import {
   GUESSED_CARDS,
   TIMER_TICK,
   FINISH_GAME,
-  TOGGLE_START_POPUP
+  TOGGLE_START_POPUP,
+  TOGGLE_FINISH_POPUP
 } from "./types";
 import {SECOND} from "../../utils";
 
@@ -54,6 +55,11 @@ const appReducer = (state = INITIAL_STATE, action) => {
         ...state,
         startPopup: !state.startPopup
       };
+    case TOGGLE_FINISH_POPUP:
+      return {
+        ...state,
+        finishPopup: !state.finishPopup,
+      };
     case FETCH_ERROR:
       return {
         ...state,
@@ -84,6 +90,8 @@ const appReducer = (state = INITIAL_STATE, action) => {
     case FINISH_GAME:
       return {
         ...state,
+        guessed: [],
+        opened: [],
         timer: state.time
       };
     default: return state;
