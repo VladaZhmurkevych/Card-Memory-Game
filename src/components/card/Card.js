@@ -7,12 +7,11 @@ import {setOpenedCards} from "../store/actions";
 function Card(props) {
   const { name, opened, index, setOpenedCards, guessed, image  } = props;
   const [flipped, setFlipped] = useState(false);
-console.log(image);
   return (
     <div className={classes.card} onClick={() => {
       setFlipped(prevFlipped => !prevFlipped);
       if(!flipped) {
-        if(!opened.find((item) => item.index === index)){
+        if(!opened.find((item) => item.index === index)&&!guessed.find((item) => item.index === index)){
           setOpenedCards({
             index: index,
             name: name,

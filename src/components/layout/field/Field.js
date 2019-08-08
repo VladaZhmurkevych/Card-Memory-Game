@@ -23,8 +23,6 @@ function Field(props) {
           closeCards();
         }, 900);
       }
-
-
     }
   }, [closeCards, guessCards, opened]);
 

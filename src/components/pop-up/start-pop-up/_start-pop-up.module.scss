@@ -1,0 +1,21 @@
+.title {
+  font-size: 30px;
+  font-family: 'Pridi', serif;
+}
+
+.time {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Pridi', serif;
+  font-size: 20px;
+}
+
+@media all and (max-width: 400px){
+  .title {
+    font-size: 25px;
+  }
+
+  .time {
+    font-size: 17px;
+  }
+}

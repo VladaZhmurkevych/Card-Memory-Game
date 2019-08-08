@@ -9,12 +9,17 @@ import {
   CLOSE_CARDS,
   GUESSED_CARDS,
   TIMER_TICK,
-  FINISH_GAME
+  FINISH_GAME,
+  TOGGLE_START_POPUP
 } from "./types";
 
 export const setFieldSize = (size) => ({
   type: FIELD_SIZE,
   payload: size
+});
+
+export const toggleStartPopup = () => ({
+  type: TOGGLE_START_POPUP,
 });
 
 export const fetchStart = () => ({

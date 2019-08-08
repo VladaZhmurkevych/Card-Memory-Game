@@ -49,7 +49,7 @@ const mediumGame = {
 
     },
   ],
-  time: 120000,
+  time: 10000,
   title: "medium",
 };
 

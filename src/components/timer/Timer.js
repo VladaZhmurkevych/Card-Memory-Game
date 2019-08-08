@@ -14,7 +14,6 @@ function Timer(props) {
     }, SECOND);
   }, []);
 
-
   return (
     <p className={classes.timer}>{formatTime(timer)}</p>
   );

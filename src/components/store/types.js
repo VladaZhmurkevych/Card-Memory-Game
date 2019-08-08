@@ -7,3 +7,4 @@ export const CLOSE_CARDS = 'CLOSE_CARDS';
 export const GUESSED_CARDS = 'GUESSED_CARDS';
 export const TIMER_TICK = 'TIMER_TICK';
 export const FINISH_GAME = 'FINISH_GAME';
+export const TOGGLE_START_POPUP = 'TOGGLE_START_POPUP';
